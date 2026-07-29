@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0b0d10;
+  color: #ecedee;
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(255, 138, 61, 0.12);
+  color: #ff8a3d;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-xs tracking-[0.14em] uppercase text-accent flex items-center gap-2 mb-3.5;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ff8a3d;
+    box-shadow: 0 0 10px #ff8a3d;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-full text-sm font-semibold transition-all inline-flex items-center gap-2;
+  }
+  .btn-primary {
+    @apply bg-accent text-bg hover:opacity-90 hover:-translate-y-0.5;
+  }
+  .btn-outline {
+    @apply border border-border text-text hover:border-textDim hover:bg-surface;
+  }
+
+  .pill {
+    @apply font-mono text-xs px-3.5 py-1.5 border border-border rounded-full text-textDim;
+  }
+
+  .badge {
+    @apply font-mono text-[11px] px-2.5 py-1 rounded-full bg-accent2/10 text-accent2 inline-flex items-center gap-1.5 w-fit mb-3.5;
+  }
+  .badge::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #6c8eef;
+  }
+  .badge-placeholder {
+    @apply bg-surface2 text-textFaint;
+  }
+  .badge-placeholder::before {
+    background: #565c66;
+  }
+
+  .tag {
+    @apply font-mono text-[11px] px-2.5 py-1 border border-borderSoft rounded-md text-textDim;
+  }
+
+  .card {
+    @apply border border-border rounded-2xl p-6 bg-surface flex flex-col min-h-[250px] transition-all hover:-translate-y-1;
+    border-color: #262b33;
+  }
+  .card:hover {
+    border-color: #b8632c;
+  }
+
+  .tab {
+    @apply font-mono text-[13px] px-5 py-2.5 border border-border rounded-full text-textDim cursor-pointer transition-all bg-surface flex items-center gap-2;
+  }
+  .tab.active {
+    @apply text-accent border-accent;
+    background: rgba(255, 138, 61, 0.12);
+  }
+}
