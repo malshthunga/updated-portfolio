@@ -21,12 +21,13 @@ export default function About() {
           <div className="eyebrow">About</div>
           <h2 className="text-4xl font-bold mb-4.5">About Me</h2>
           <p className="text-textDim text-base leading-relaxed mb-6.5">
-            Adelaide-based IT graduate with a genuine love for making messy things
-            make sense — whether that&apos;s data, code, or a broken laptop. I work
-            across <strong className="text-text font-semibold">data analytics</strong>,{" "}
-            <strong className="text-text font-semibold">IT support</strong>, and{" "}
-            <strong className="text-text font-semibold">software engineering</strong>,
-            and I&apos;m open to roles in any of those.
+            I'm an IT graduate from Adelaide University, majoring in Artificial Intelligence and Machine Learning, and most days you'll find me somewhere between a dataset, a broken system, and a cup of coffee, trying to make sense of all three. My work stretches across data analytics, IT support, and software engineering, and I like it that way. Data analytics gives me the puzzle, IT support gives me the fix, and software engineering gives me something to build once I've figured both out.
+
+            I keep my problem solving sharp on LeetCode, work in Python, SQL, Power BI, and Java, and spent time as a research assistant at university, which taught me just as much about asking the right question as finding the answer.
+
+            Outside of the technical work, I'm an active member of the ACS and served as COO of Women in Leadership Management, where I got to spend time on something I care about just as much as code: making sure more people feel like they belong in tech and in leadership.
+
+            If you're into data, tech, or good coffee, let's talk.
           </p>
           <div className="flex flex-wrap gap-2 mb-7">
             {skills.map((s) => (
