@@ -1,10 +1,11 @@
+import { Mail, Linkedin, Github, FileText } from "lucide-react";
 import TileCanvas from "./TileCanvas";
 
 const links = [
-  { label: "Email", icon: "✉", href: "mailto:you@example.com" },
-  { label: "LinkedIn", icon: "in", href: "https://www.linkedin.com/in/nethmi-ranathunga/" },
-  { label: "GitHub", icon: "gh", href: "https://github.com/malshthunga" },
-  { label: "Resume", icon: "📄", href: "/resume.pdf" },
+  { label: "Email", icon: Mail, href: "mailto:you@example.com" },
+  { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/nethmi-ranathunga/" },
+  { label: "GitHub", icon: Github, href: "https://github.com/malshthunga" },
+  { label: "Resume", icon: FileText, href: "/resume.pdf" },
 ];
 
 export default function Contact() {
@@ -24,15 +25,22 @@ export default function Contact() {
           </p>
         </div>
         <div className="flex flex-wrap gap-3 justify-center">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              className="flex items-center gap-2.5 px-5.5 py-3 rounded-full border border-border bg-surface text-sm font-medium transition-all hover:border-accent hover:bg-accent/10 hover:text-accent hover:-translate-y-0.5"
-            >
-              <span className="text-[15px]">{l.icon}</span> {l.label}
-            </a>
-          ))}
+          {links.map((l) => {
+            const Icon = l.icon;
+            return (
+              <a
+              
+                key={l.label}
+                href={l.href}
+                target={l.href.startsWith("http") ? "_blank" : undefined}
+                rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                className="flex items-center gap-2.5 px-5.5 py-3 rounded-full border border-border bg-surface text-sm font-medium transition-all hover:border-accent hover:bg-accent/10 hover:text-accent hover:-translate-y-0.5"
+              >
+                <Icon size={16} strokeWidth={2} />
+                {l.label}
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>
