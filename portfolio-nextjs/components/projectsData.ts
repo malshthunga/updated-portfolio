@@ -71,8 +71,24 @@ export const projects: Project[] = [
   },
 
 
-// --- SOFTWARE ENGINEERING ---
+
  // --- SOFTWARE ENGINEERING ---
+   {
+    category: "@software",
+    badge: "Learning  Management System",
+    title: "Learnworld Learning Management System",
+    description: "Built LMS for ST Peters Girls School Adelaide for courses accessible to both students and their parents based on digital wellbeing. Live Access: https://raisewisely.learnworlds.com/home",
+    // longDescription: ",
+    tags: ["..."],
+    href: "https://github.com/malshthunga/magical-interactive-experience",
+    media: [
+      { type: "video", src: "/assets/walkthrough-recording.mp4" },
+      { type: "image", src: "/assets/webpage-0.png", alt: "mirrorxr home" },
+      { type: "image", src: "/assets/webpage-01.png", alt: "mirrorxr avatar" },
+      { type: "image", src: "/assets/webpage-001.png", alt: "mirrorxr waiting" },
+      { type: "image", src: "/assets/webpage-1.png", alt: "mirrorxr avatar" }
+    ]
+  },
   {
     category: "@software",
     badge: "Interactive Frontend",
