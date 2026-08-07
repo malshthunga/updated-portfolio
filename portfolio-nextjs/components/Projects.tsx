@@ -131,7 +131,7 @@ function Slideshow({ media }: { media?: Project["media"] }) {
     return (
       <div
         style={{
-          height: 300,
+          height: 320,
           borderRadius: 10,
           background: "#1a1a1c",
           display: "flex",
@@ -153,26 +153,70 @@ function Slideshow({ media }: { media?: Project["media"] }) {
       <div
         style={{
           position: "relative",
-          height: 320,
+          minHeight: 380,
+          maxHeight: 520,
           borderRadius: 10,
           overflow: "hidden",
-          background: "#000",
+          background: "#08080a",
+          border: "1px solid #222226",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
+        {/* Full Resolution Overlay Badge */}
+        {current.type !== "video" && (
+          <a
+            href={current.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Open high-resolution image in new tab"
+            style={{
+              position: "absolute",
+              top: 12,
+              right: 12,
+              zIndex: 10,
+              background: "rgba(15, 15, 18, 0.85)",
+              border: "1px solid rgba(255, 255, 255, 0.2)",
+              color: "#e08a3e",
+              fontSize: 12,
+              fontFamily: "monospace",
+              padding: "5px 10px",
+              borderRadius: 6,
+              textDecoration: "none",
+              backdropFilter: "blur(4px)",
+            }}
+          >
+            Full Res ↗
+          </a>
+        )}
+
         {current.type === "video" ? (
           <video
             key={current.src}
             src={current.src}
             controls
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+            style={{ width: "100%", maxHeight: 520, objectFit: "contain" }}
           />
         ) : (
-          <img
-            key={current.src}
-            src={current.src}
-            alt={current.alt || ""}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
-          />
+          <a
+            href={current.src}
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ cursor: "zoom-in", width: "100%", display: "flex", justifyContent: "center" }}
+          >
+            <img
+              key={current.src}
+              src={current.src}
+              alt={current.alt || ""}
+              style={{
+                maxWidth: "100%",
+                maxHeight: 500,
+                objectFit: "contain",
+                padding: 8,
+              }}
+            />
+          </a>
         )}
 
         {items.length > 1 && (
@@ -214,7 +258,6 @@ function Slideshow({ media }: { media?: Project["media"] }) {
     </div>
   );
 }
-
 function navBtnStyle(side: "left" | "right"): React.CSSProperties {
   return {
     position: "absolute",
