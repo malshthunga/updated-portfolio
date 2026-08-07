@@ -70,31 +70,51 @@ export const projects: Project[] = [
     ]
   },
 
-  // --- SOFTWARE ENGINEERING ---
+
+// --- SOFTWARE ENGINEERING ---
+ // --- SOFTWARE ENGINEERING ---
   {
     category: "@software",
-    badge: "Full-Stack",
-    title: "Interactive Learning & Progress Platform",
-    description: "Architected and built full-stack web application with modular components and real-time state sync.",
-    longDescription: "Designed an interactive learning portal featuring progress tracking, responsive dashboards, and seamless frontend-backend integration.",
-    tags: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
-    href: "https://github.com/yourname/learning-platform",
+    badge: "Interactive Frontend",
+    title: "Interactive Live Game Web Experience",
+    description: "Built responsive Next.js and React interfaces to power real-time interactive game states.",
+    longDescription: "Engineered high-performance web components and real-time state synchronization using Next.js and React. Developed user-facing game interfaces connected to a backend infrastructure designed for dynamic user interaction.",
+    tags: ["Next.js", "React", "TypeScript", "Node.js", "PostgreSQL"],
+    href: "https://github.com/malshthunga/magical-interactive-experience",
     media: [
-      { type: "image", src: "/assets/business-overview-dashboard.png", alt: "Platform View" }
+      { type: "video", src: "/assets/walkthrough-recording.mp4" },
+      { type: "image", src: "/assets/webpage-0.png", alt: "mirrorxr home" },
+      { type: "image", src: "/assets/webpage-01.png", alt: "mirrorxr avatar" },
+      { type: "image", src: "/assets/webpage-001.png", alt: "mirrorxr waiting" },
+      { type: "image", src: "/assets/webpage-1.png", alt: "mirrorxr avatar" }
+    ]
+  },
+  {
+    category: "@software",
+    badge: "System Design",
+    title: "Platform Data Models & System Architecture",
+    description: "Designed comprehensive data schemas, AV routing workflows, and Miro system architecture flows.",
+    longDescription: "Architected the backend data models and audio-visual pipeline diagrams for multi-platform integration. Created clear technical visual specifications using Miro to define data flow boundaries, database relationships, and real-time media transport across systems.",
+    tags: ["System Architecture", "PostgreSQL", "Data Modeling", "Miro", "AV Design"],
+    href: "https://github.com/yourname/system-architecture-docs",
+    media: [
+      { type: "image", src: "/assets/av-data-model-diagram.png", alt: "AV and Data Model System Flow" },
+      { type: "image", src: "/assets/miro-architecture-flow.png", alt: "Miro Platform Flow Architecture" }
     ]
   },
 
   // --- IT SUPPORT ---
   {
     category: "@it",
-    badge: "Systems & Network",
-    title: "IT Support & System Operations Automation",
-    description: "Configured local environment workflows, domain management scripts, and troubleshooting protocols.",
-    longDescription: "Streamlined routine systems administration tasks using automated scripts, user permissions management, and diagnostic logging tools.",
-    tags: ["Active Directory", "PowerShell", "Networking"],
-    href: "https://github.com/yourname/it-automation",
+    badge: "LMS Admin & Technical Docs",
+    title: "Learning Management System",
+    description: "Configured LearnWorlds platform, produced user support documentation, and recorded feature guides.",
+    longDescription: "Managed backend configuration for the LearnWorlds LMS platform. Authored end-user technical support documentation and produced video walkthrough guides to streamline user onboarding, platform troubleshooting, and operational workflows.",
+    tags: ["LearnWorlds", "Technical Writing", "LMS Admin", "Video Documentation", "User Support"],
+    href: "https://github.com/yourname/lms-support-docs",
     media: [
-      { type: "image", src: "/assets/university-logo.jpg", alt: "System Architecture" }
+      { type: "video", src: "/assets/learnworlds-walkthrough.mp4" },
+      { type: "image", src: "/assets/lms-support-guide-preview.png", alt: "Technical Support Documentation" }
     ]
   }
 ];
