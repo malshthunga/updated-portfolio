@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, X, Play } from "lucide-react";
-import { projects, Project } from "./projectsData";
+import { ChevronLeft, ChevronRight, X, Play, ArrowRight } from "lucide-react";
+import { projects, Project, Category } from "./projectsData";
 
 function Badge({ children }: { children: React.ReactNode }) {
   return (
@@ -59,10 +59,10 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: (p: Projec
         background: "#111113",
         border: "1px solid #26262a",
         borderRadius: 12,
-        padding: 20,
+        padding: 24,
         display: "flex",
         flexDirection: "column",
-        gap: 12,
+        gap: 14,
       }}
     >
       <div style={{ fontSize: 11, fontFamily: "monospace", color: "#6b6b6f", letterSpacing: 1 }}>
@@ -71,10 +71,10 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: (p: Projec
       <div>
         <Badge>{project.badge}</Badge>
       </div>
-      <h3 style={{ fontSize: 19, fontWeight: 500, color: "#f2f2f2", margin: 0, lineHeight: 1.3 }}>
+      <h3 style={{ fontSize: 18, fontWeight: 600, color: "#f2f2f2", margin: 0, lineHeight: 1.3 }}>
         {project.title}
       </h3>
-      <p style={{ fontSize: 14, color: "#a3a3a6", lineHeight: 1.6, margin: 0, flexGrow: 1 }}>
+      <p style={{ fontSize: 13.5, color: "#a3a3a6", lineHeight: 1.6, margin: 0, flexGrow: 1 }}>
         {project.description}
       </p>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
@@ -86,7 +86,8 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: (p: Projec
         onClick={() => onOpen(project)}
         style={{
           background: "none",
-          border: "none",
+          border: "1px solid #33261a",
+          borderRadius: 6,
           color: "#e08a3e",
           fontFamily: "monospace",
           fontSize: 13,
@@ -94,12 +95,12 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: (p: Projec
           alignItems: "center",
           gap: 6,
           cursor: "pointer",
-          padding: 0,
-          marginTop: 4,
+          padding: "8px 12px",
+          marginTop: 6,
           alignSelf: "flex-start",
         }}
       >
-        view_project() <ChevronRight size={14} />
+        view_project() <ArrowRight size={14} />
       </button>
     </div>
   );
@@ -130,7 +131,7 @@ function Slideshow({ media }: { media?: Project["media"] }) {
     return (
       <div
         style={{
-          height: 320,
+          height: 300,
           borderRadius: 10,
           background: "#1a1a1c",
           display: "flex",
@@ -140,7 +141,7 @@ function Slideshow({ media }: { media?: Project["media"] }) {
           fontSize: 13,
         }}
       >
-        No media available
+        No preview media available
       </div>
     );
   }
@@ -152,7 +153,7 @@ function Slideshow({ media }: { media?: Project["media"] }) {
       <div
         style={{
           position: "relative",
-          height: 340,
+          height: 320,
           borderRadius: 10,
           overflow: "hidden",
           background: "#000",
@@ -253,7 +254,7 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
       style={{
         position: "fixed",
         inset: 0,
-        background: "rgba(0,0,0,0.8)",
+        background: "rgba(0,0,0,0.82)",
         backdropFilter: "blur(4px)",
         display: "flex",
         alignItems: "center",
@@ -288,7 +289,7 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
           </button>
         </div>
 
-        <h2 style={{ fontSize: 22, fontWeight: 500, color: "#f2f2f2", margin: "8px 0 16px" }}>
+        <h2 style={{ fontSize: 22, fontWeight: 600, color: "#f2f2f2", margin: "8px 0 16px" }}>
           {project.title}
         </h2>
 
@@ -335,25 +336,104 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
 }
 
 export default function Projects() {
-  const [active, setActive] = useState<Project | null>(null);
+  const [activeCategory, setActiveCategory] = useState<Category>("@analytics");
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const analyticsCount = projects.filter((p) => p.category === "@analytics").length;
+  const softwareCount = projects.filter((p) => p.category === "@software").length;
+  const itCount = projects.filter((p) => p.category === "@it").length;
+
+  const filteredProjects = projects.filter((p) => p.category === activeCategory);
+
+  const toolSummaries: Record<Category, string> = {
+    "@analytics": "Python · SQL · scikit-learn · Power BI · Excel",
+    "@software": "Next.js · React · Node.js · TypeScript · PostgreSQL",
+    "@it": "Active Directory · PowerShell · Networking · Troubleshooting",
+  };
 
   return (
-    <div style={{ background: "#0a0a0b", minHeight: "100vh", padding: 32 }}>
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-          gap: 20,
-          maxWidth: 900,
-          margin: "0 auto",
-        }}
-      >
-        {projects.map((p) => (
-          <ProjectCard key={p.title} project={p} onOpen={setActive} />
-        ))}
+    <div style={{ background: "#0a0a0c", minHeight: "100vh", padding: "40px 24px", color: "#fff" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        
+        {/* Header */}
+        <h1 style={{ fontSize: 36, fontWeight: 600, margin: "0 0 8px 0" }}>Projects</h1>
+        <p style={{ color: "#8a8a8e", fontSize: 15, margin: "0 0 28px 0" }}>
+          Filter by the field you're hiring for — each tab shows only the relevant work.
+        </p>
+
+        {/* Category Tabs */}
+        <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 16 }}>
+          <button
+            onClick={() => setActiveCategory("@analytics")}
+            style={{
+              padding: "8px 18px",
+              borderRadius: 999,
+              fontSize: 14,
+              fontFamily: "monospace",
+              cursor: "pointer",
+              background: activeCategory === "@analytics" ? "rgba(224, 138, 62, 0.1)" : "#141416",
+              color: activeCategory === "@analytics" ? "#e08a3e" : "#8a8a8e",
+              border: activeCategory === "@analytics" ? "1px solid #e08a3e" : "1px solid #242428",
+            }}
+          >
+            Data Analytics ({analyticsCount})
+          </button>
+
+          <button
+            onClick={() => setActiveCategory("@software")}
+            style={{
+              padding: "8px 18px",
+              borderRadius: 999,
+              fontSize: 14,
+              fontFamily: "monospace",
+              cursor: "pointer",
+              background: activeCategory === "@software" ? "rgba(224, 138, 62, 0.1)" : "#141416",
+              color: activeCategory === "@software" ? "#e08a3e" : "#8a8a8e",
+              border: activeCategory === "@software" ? "1px solid #e08a3e" : "1px solid #242428",
+            }}
+          >
+            Software Engineering ({softwareCount})
+          </button>
+
+          <button
+            onClick={() => setActiveCategory("@it")}
+            style={{
+              padding: "8px 18px",
+              borderRadius: 999,
+              fontSize: 14,
+              fontFamily: "monospace",
+              cursor: "pointer",
+              background: activeCategory === "@it" ? "rgba(224, 138, 62, 0.1)" : "#141416",
+              color: activeCategory === "@it" ? "#e08a3e" : "#8a8a8e",
+              border: activeCategory === "@it" ? "1px solid #e08a3e" : "1px solid #242428",
+            }}
+          >
+            IT Support ({itCount})
+          </button>
+        </div>
+
+        {/* Core Tools Subheader */}
+        <div style={{ fontSize: 13, color: "#6b6b6f", fontFamily: "monospace", marginBottom: 32 }}>
+          Core tools: <span style={{ color: "#a5b4d4" }}>{toolSummaries[activeCategory]}</span>
+        </div>
+
+        {/* Projects Grid */}
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))",
+            gap: 20,
+          }}
+        >
+          {filteredProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} onOpen={setSelectedProject} />
+          ))}
+        </div>
+
       </div>
 
-      <ProjectModal project={active} onClose={() => setActive(null)} />
+      {/* Slideout Modal */}
+      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </div>
   );
 }
