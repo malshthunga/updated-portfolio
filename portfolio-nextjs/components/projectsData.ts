@@ -98,8 +98,11 @@ export const projects: Project[] = [
     tags: ["System Architecture", "PostgreSQL", "Data Modeling", "Miro", "AV Design"],
     href: "https://github.com/yourname/system-architecture-docs",
     media: [
-      { type: "image", src: "/assets/av-data-model-diagram.png", alt: "AV and Data Model System Flow" },
-      { type: "image", src: "/assets/miro-architecture-flow.png", alt: "Miro Platform Flow Architecture" }
+      { type: "image", src: "/assets/av-diagram.png", alt: "AV and Data Model System Flow" },
+      { type: "image", src: "/assets/system-architecture-diagram.png", alt: "Miro Platform Flow Architecture" },
+      { type: "image", src: "/assets/system-architecture-diagram2.png", alt: "Miro Platform Flow Architecture 2" },
+      { type: "image", src: "/assets/tools-technologies.png", alt: "Technologies & Tools" }
+  
     ]
   },
 
