@@ -183,14 +183,13 @@ export const projects: Project[] = [
   {
     category: "@it",
     badge: "LMS Admin & Technical Docs",
-    title: "Learning Management System",
+    title: "Technical documentation ",
     description: "Configured LearnWorlds platform, produced user support documentation, and recorded feature guides.",
     longDescription: "Managed backend configuration for the LearnWorlds LMS platform. Authored end-user technical support documentation and produced video walkthrough guides to streamline user onboarding, platform troubleshooting, and operational workflows.",
     tags: ["LearnWorlds", "Technical Writing", "LMS Admin", "Video Documentation", "User Support"],
-    href: "https://github.com/yourname/lms-support-docs",
+    href: "https://drive.google.com/file/d/1xPnt8pT1w4SjICeG2SbaqCdWsoGw0bGW/view",
     media: [
-      { type: "video", src: "/assets/learnworlds-walkthrough.mp4" },
-      { type: "image", src: "/assets/lms-support-guide-preview.png", alt: "Technical Support Documentation" }
+      { type: "image", src: "/assets/technical-documentation.png", alt: "Technical Support Documentation" }
     ]
   }
 ];
