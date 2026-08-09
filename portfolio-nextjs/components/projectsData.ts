@@ -70,25 +70,67 @@ export const projects: Project[] = [
     ]
   },
 
+  {
+  category: "@analytics",
+  badge: "36% RMSE improvement",
+  title: "Bike Rental Demand Forecast",
+  description: "Forecasted hourly bike rental demand in Seoul using regression models, cutting prediction error well below a mean-baseline model.",
+  longDescription: "Cleaned and engineered a real-world dataset of 8,760 hourly bike rental records — handling out-of-range sensor values, missing data, and converting categorical features (Season, Holiday, Weekday) into numerical form via a scikit-learn preprocessing pipeline. Compared Linear Regression, Kernel Ridge, and Support Vector Regression models using 10-fold cross-validation and grid search for hyperparameter tuning. The best model (Linear Regression) reduced RMSE to ~440 versus a ~646 baseline (predicting the mean), with temperature, season, and hour of day emerging as the strongest predictors of demand.",
+  tags: ["Python", "scikit-learn", "Regression", "Feature Engineering"],
+  href: "https://github.com/malshthunga/Machine-Learning-Projects/tree/main/Bike%20Rental%20Demand%20Forecast",
+  media: [
+    { type: "image", src: "/assets/forecast11.png", alt: "Bike rental demand — predicted vs actual scatter plot" },
+    { type: "image", src: "/assets/forecast1.png", alt: "Bike rental demand — predicted vs actual scatter plot" },
+    { type: "image", src: "/assets/forecast2.png", alt: "Bike rental demand — predicted vs actual scatter plot" },
+    { type: "image", src: "/assets/forecast3.png", alt: "Bike rental demand — predicted vs actual scatter plot" },
+  ]
+},
+
 
 
  // --- SOFTWARE ENGINEERING ---
    {
     category: "@software",
-    badge: "Learning  Management System",
+    badge: "Learning Management System",
     title: "Learnworld Learning Management System",
-    description: "Built LMS for ST Peters Girls School Adelaide for courses accessible to both students and their parents based on digital wellbeing. Live Access: https://raisewisely.learnworlds.com/home",
-    // longDescription: ",
-    tags: ["..."],
-    href: "https://github.com/malshthunga/magical-interactive-experience",
+    description: "Built LMS for St Peter's Girls School Adelaide, giving students and parents access to courses built around digital wellbeing.",
+    longDescription: "Designed and built the course architecture end-to-end — chaptered lessons, quizzes, workshop resources, and completion certificates — across separate student and parent tracks. Live at raisewisely.learnworlds.com.Please scroll through the images in the slides to deep dive into the course structure.",
+    tags: ["LearnWorlds", "Course Design", "LMS Architecture", "Digital Wellbeing"],
+    href: "https://raisewisely.learnworlds.com/home",
     media: [
-      { type: "video", src: "/assets/walkthrough-recording.mp4" },
-      { type: "image", src: "/assets/webpage-0.png", alt: "mirrorxr home" },
-      { type: "image", src: "/assets/webpage-01.png", alt: "mirrorxr avatar" },
-      { type: "image", src: "/assets/webpage-001.png", alt: "mirrorxr waiting" },
-      { type: "image", src: "/assets/webpage-1.png", alt: "mirrorxr avatar" }
+
+      { type: "image", src: "/assets/LW1`.png", alt: "LMS1" },
+      { type: "image", src: "/assets/LW2.png", alt: "LMS2" },
+      { type: "image", src: "/assets/LW3.jpg", alt: "LMS3" },
+      { type: "video", src: "LWrecording1.mp4", alt: "LMSrecording1" },
+      { type: "video", src: "LWrecording2.mp4", alt: "LMSrecording2" },
     ]
   },
+
+  {
+  category: "@software",
+  badge: "QA & Course Architecture",
+  title: "LMS Testing & Course Structure Design",
+  description: "Planned course architecture and ran structured feature validation testing across the LMS build.",
+  longDescription: "Designed the chapter-by-chapter course architecture for both the student and parent tracks — mapping out lesson sequencing, quiz placement, and activity types before build. Ran operational testing against a feature validation log to confirm activities, quizzes, and completion flows worked as intended before launch.",
+  tags: ["QA Testing", "Course Design", "LearnWorlds", "Documentation"],
+  href: "https://raisewisely.learnworlds.com/home",
+  media: [
+    { type: "image", src: "/assets/structure1.png", alt: "Course structure and chapter architecture" },
+    { type: "image", src: "/assets/structure2.png", alt: "Course structure and chapter architecture" },
+    // { type: "image", src: "/assets/structure3.png", alt: "Course structure and chapter architecture" },
+    { type: "image", src: "/assets/structure33.png", alt: "Course structure and chapter architecture" },
+    { type: "image", src: "/assets/structure34.png", alt: "Course structure and chapter architecture" },
+    { type: "image", src: "/assets/structure35.png", alt: "Course structure and chapter architecture" },
+    { type: "image", src: "/assets/structure36.png", alt: "Course structure and chapter architecture" },
+    { type: "image", src: "/assets/structure4.png", alt: "Course structure and chapter architecture" },
+    { type: "image", src: "/assets/structure5.png", alt: "Course structure and chapter architecture" },
+    { type: "image", src: "/assets/structure6.png", alt: "Course structure and chapter architecture" },
+    { type: "image", src: "/assets/structure7.png", alt: "Course structure and chapter architecture" },
+    { type: "image", src: "/assets/structure8.png", alt: "Course structure and chapter architecture" },
+    { type: "image", src: "/assets/structure9.png", alt: "Course structure and chapter architecture" },
+  ]
+},
   {
     category: "@software",
     badge: "Interactive Frontend",
@@ -117,10 +159,25 @@ export const projects: Project[] = [
       { type: "image", src: "/assets/av-diagram.png", alt: "AV and Data Model System Flow" },
       { type: "image", src: "/assets/system-architecture-diagram.png", alt: "Miro Platform Flow Architecture" },
       { type: "image", src: "/assets/system-architecture-diagram2.png", alt: "Miro Platform Flow Architecture 2" },
+      { type: "image", src: "/assets/system-architecture-diagram3.png", alt: "Miro Platform Flow Architecture 3" },  
       { type: "image", src: "/assets/tools-technologies.png", alt: "Technologies & Tools" }
   
     ]
   },
+
+  {
+  category: "@software",
+  badge: "Distributed Systems",
+  title: "Paxos Council — Distributed Consensus Simulation",
+  description: "Simulated the Paxos consensus protocol across 9 peer nodes communicating over TCP, reaching agreement despite delays, latency, and node failures.",
+  longDescription: "Built a peer-to-peer simulation of Paxos, one of the foundational algorithms in fault-tolerant distributed systems. Nine council-member nodes (M1–M9) each take on Proposer, Acceptor, and Learner roles, exchanging PREPARE/PROMISE/ACCEPT_REQUEST/ACCEPTED messages over TCP sockets to reach majority agreement (quorum) on a single value — while preserving Paxos's core safety guarantee (no two nodes decide differently) and liveness guarantee (a decision is still reached despite delays or crashes). Simulated real-world network conditions — latency, packet loss, node failure — using configurable node profiles, then validated the system with an integration test suite covering ideal-network, concurrent-proposal, and fault-tolerant scenarios. Built in Java with Maven, using Gson for JSON message serialization and JUnit 5 for unit testing.",
+  tags: ["Java", "Distributed Systems", "TCP/IP", "Concurrency", "Maven", "JUnit"],
+  href: "https://github.com/malshthunga/Paxos-Consensus-",
+  media: [
+    { type: "image", src: "/assets/paxos1.png", alt: "Integration testing table — scenarios, expected vs actual output" },
+    { type: "image", src: "/assets/paxos2.png", alt:"paxos-council2"}
+  ]
+},
 
   // --- IT SUPPORT ---
   {
