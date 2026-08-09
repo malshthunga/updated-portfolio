@@ -85,6 +85,31 @@ export const projects: Project[] = [
     { type: "image", src: "/assets/forecast3.png", alt: "Bike rental demand — predicted vs actual scatter plot" },
   ]
 },
+{
+  category: "@analytics",
+  badge: "Data Structures & Algorithms",
+  title: "KD-Tree Nearest Neighbor Classifier",
+  description: "Built a 1-Nearest-Neighbor classifier from scratch using a k-d tree, optimizing nearest-neighbor search over brute-force comparison.",
+  longDescription: "Implemented a k-d tree (k-dimensional tree) from scratch in Python to speed up 1-Nearest-Neighbor classification — recursively partitioning the training data by splitting dimension, then using tree pruning to search for the nearest neighbor far more efficiently than a brute-force linear scan. Handled deterministic tie-breaking by label value and built the classifier to run from the command line on arbitrary whitespace-delimited training/test datasets.",
+  tags: ["Python", "Data Structures", "Algorithms", "k-NN"],
+  href: "https://github.com/malshthunga/Machine-Learning-Projects/tree/main/ND%20Tree%20Using%20Random%20Forest",
+  media: [
+    { type: "image", src: "/assets/kdtree1.png", alt: "KD-tree classifier output" },
+  ]
+},
+
+{
+  category: "@analytics",
+  badge: "96.6% F1 · 99.3% AUC",
+  title: "Breast Cancer Diagnosis Classifier",
+  description: "Built a classifier to detect malignant tumours from histological cell measurements, benchmarked against clinical baselines.",
+  longDescription: "Framed as a real client scenario for a pathology lab, this project compares four classification models — KNN, Decision Tree, SVC, and SGD — using grid search and cross-validation to tune hyperparameters. Selected the evaluation metric (F1) based on the clinical cost of false negatives in cancer diagnosis, then benchmarked every model against simple baselines to prove genuine predictive value. The final K-Nearest Neighbours model, retrained on the full training set, achieved 96.6% recall, 96.6% precision, 96.6% F1, and 99.3% AUC on held-out test data — correctly balancing the need to catch malignant cases without over-flagging benign ones.",
+  tags: ["Python", "scikit-learn", "Classification", "Model Selection"],
+  href: "https://github.com/malshthunga/Machine-Learning-Projects/tree/main/Breast%20Cancer%20Detection%20ML",
+  media: [
+    { type: "image", src: "/assets/breastcancer1.png", alt: "Confusion matrix and model comparison" },
+  ]
+},
 
 
 
