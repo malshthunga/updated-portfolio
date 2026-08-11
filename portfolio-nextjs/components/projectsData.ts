@@ -216,5 +216,18 @@ export const projects: Project[] = [
     media: [
       { type: "image", src: "/assets/technical-documentation.png", alt: "Technical Support Documentation" }
     ]
-  }
+  },
+
+  {
+  category: "@it",
+  badge: "Network Infrastructure",
+  title: "Home Network Infrastructure",
+  description: "Configured and documented a small business-style home network — NBN modem, router, managed switch, and PoE-powered wireless access point.",
+  longDescription: "Set up a layered home network using a Teltonika RUT240 router (WAN to LAN), a switch for wired distribution, and a Ubiquiti UniFi access point powered via a dedicated PoE adapter for wireless coverage. Documented the full topology in a network diagram distinguishing wired (Ethernet/PoE) and wireless (Wi-Fi) connections by line style and color, following standard networking diagram conventions.",
+  tags: ["Networking", "Router Configuration", "PoE", "Documentation"],
+  href: "#",
+  media: [
+    { type: "image", src: "/assets/homelab-network-diagram.png", alt: "Home network topology diagram" },
+  ]
+}
 ];

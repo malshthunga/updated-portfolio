@@ -4,7 +4,17 @@ const columns = [
   { title: "Languages", items: ["Python", "SQL", "Java", "JavaScript"] },
   { title: "Data & ML", items: ["scikit-learn", "Pandas", "Power BI", "Excel / PivotTables"] },
   { title: "Engineering", items: ["Spring Boot", "REST APIs", "Git / GitHub", "SQL databases"] },
-  { title: "IT & Support", items: ["Documentation", "System Admin", "LMS Platforms", "Troubleshooting"] },
+  {
+    title: "IT & Support",
+    items: [
+      "Windows Server & Active Directory",
+      "Microsoft 365",
+      "Networking (TCP/IP, DNS, VPN)",
+      "System Admin",
+      "Troubleshooting",
+      "Documentation",
+    ],
+  },
 ];
 
 export default function Stack() {

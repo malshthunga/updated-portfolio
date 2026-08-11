@@ -194,6 +194,23 @@ export default function Hero() {
             GitHub
           </a>
         </div>
+        <div className="flex flex-wrap justify-center gap-3 mt-8">
+          {[
+            "Full Working Rights in Australia",
+            "No Sponsorship Required",
+            "Open to IT Support, Data Analytics & Software Engineering Roles",
+          ].map((item) => (
+            <span
+              key={item}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-full border border-accent2/40 bg-bg/90 backdrop-blur-md text-sm font-medium text-text shadow-lg shadow-black/40"
+            >
+              <span className="flex items-center justify-center w-5 h-5 rounded-full bg-accent2 text-bg text-[11px] font-bold">
+                ✓
+              </span>
+              {item}
+            </span>
+          ))}
+        </div>
       </div>
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[2] flex flex-col items-center gap-2.5 font-mono text-[11px] tracking-[0.14em] text-textFaint uppercase">
         <span>Scroll</span>

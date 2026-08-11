@@ -1,7 +1,7 @@
 import Image from "next/image";
 import TileCanvas from "./TileCanvas";
 
-const skills = ["Python", "SQL", "Power BI", "Excel", "Scikit-learn", "Machine Learning"];
+const skills = ["Python", "SQL", "Power BI", "Excel", "DAX", "Machine Learning", "Windows Server & Active Directory", "Microsoft 365", "Troubleshooting", "Technical Documentation", "Networking(TCP/IP, DNS, VPN)", "Ticketing Systems(ServiceNow, Jira)"];
 
 export default function About() {
   return (
@@ -46,7 +46,10 @@ export default function About() {
           </p>
           <div className="flex flex-wrap gap-2 mb-7">
             {skills.map((s) => (
-              <span key={s} className="pill uppercase">
+              <span
+                key={s}
+                className="px-4 py-2 rounded-full border border-accent2/40 bg-bg/80 backdrop-blur-sm text-xs font-mono tracking-wide text-text uppercase"
+              >
                 {s}
               </span>
             ))}
