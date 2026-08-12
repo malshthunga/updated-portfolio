@@ -395,7 +395,7 @@ export default function Projects() {
   };
 
   return (
-    <div style={{ background: "#0a0a0c", minHeight: "100vh", padding: "40px 24px", color: "#fff" }}>
+    <div id="projects" style={{ background: "#0a0a0c", minHeight: "100vh", padding: "40px 24px", color: "#fff" }}>
       <div style={{ maxWidth: 1100, margin: "0 auto" }}>
         
         {/* Header */}
