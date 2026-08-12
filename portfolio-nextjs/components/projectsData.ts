@@ -229,5 +229,18 @@ export const projects: Project[] = [
   media: [
     { type: "image", src: "/assets/homelab-network-diagram.png", alt: "Home network topology diagram" },
   ]
-}
+},
+
+{
+  category: "@it",
+  badge: "Service Desk Training",
+  title: "Service Desk Simulation",
+  description: "Practising real-world IT support scenarios — ticket triage, live chat, and account troubleshooting — using ServiceDesk Simulator.",
+  longDescription: "Using ServiceDesk Simulator to build hands-on IT Support Specialist skills in a simulated company environment. Handling incident tickets, voice calls, live chat support, and account management scenarios covering common issues such as hardware failures, VPN and network connectivity problems, shared drive access, and account detail changes, developing structured troubleshooting workflows and prioritisation skills consistent with real service desk operations.",
+  tags: ["Service Desk", "Ticketing", "Troubleshooting", "Customer Support"],
+  href: "#",
+  media: [
+    { type: "image", src: "/assets/servicedesk-simulator.jpeg", alt: "ServiceDesk Simulator ticket queue" }
+  ]
+},
 ];
