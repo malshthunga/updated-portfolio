@@ -215,7 +215,7 @@ export const projects: Project[] = [
   tags: ["Active Directory", "Windows Server", "PowerShell", "VirtualBox", "DNS/DHCP", "Group Policy"],
   href: "#",
   media: [
-    { type: "image", src: "/assets/ad-homelab-diagram.png", alt: "Active Directory home lab network diagram" }
+    { type: "image", src: "/assets/active-directory.png", alt: "Active Directory home lab network diagram" }
   ]
 },
   {
