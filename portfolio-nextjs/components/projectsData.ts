@@ -205,19 +205,19 @@ export const projects: Project[] = [
 },
 
   // --- IT SUPPORT ---
-  {
-    category: "@it",
-    badge: "LMS Admin & Technical Docs",
-    title: "Technical documentation ",
-    description: "Configured LearnWorlds platform, produced user support documentation, and recorded feature guides.",
-    longDescription: "Managed backend configuration for the LearnWorlds LMS platform. Authored end-user technical support documentation and produced video walkthrough guides to streamline user onboarding, platform troubleshooting, and operational workflows.",
-    tags: ["LearnWorlds", "Technical Writing", "LMS Admin", "Video Documentation", "User Support"],
-    href: "https://drive.google.com/file/d/1xPnt8pT1w4SjICeG2SbaqCdWsoGw0bGW/view",
-    media: [
-      { type: "image", src: "/assets/technical-documentation.png", alt: "Technical Support Documentation" }
-    ]
-  },
 
+  {
+  category: "@it",
+  badge: "Windows Server 2019",
+  title: "Active Directory Home Lab",
+  description: "Built a self-hosted Active Directory domain controller lab using Windows Server 2019 and Oracle VirtualBox, provisioning 1,000+ test user accounts via PowerShell.",
+  longDescription: "Deployed a Windows Server 2019 Domain Controller in Oracle VirtualBox with a dual-NIC configuration — one NIC bridged to the internet via DHCP, the other set to a static internal IP (172.16.0.1/24) for the domain network. Configured core AD roles including DNS and DHCP, then used PowerShell scripting to bulk-provision over 1,000 test user accounts for realistic scale testing. Practiced Group Policy management, organizational unit structuring, and user/computer object administration within a simulated enterprise domain environment.",
+  tags: ["Active Directory", "Windows Server", "PowerShell", "VirtualBox", "DNS/DHCP", "Group Policy"],
+  href: "#",
+  media: [
+    { type: "image", src: "/assets/ad-homelab-diagram.png", alt: "Active Directory home lab network diagram" }
+  ]
+},
   {
   category: "@it",
   badge: "Network Infrastructure",
@@ -243,4 +243,18 @@ export const projects: Project[] = [
     { type: "image", src: "/assets/servicedesk-simulator.jpg", alt: "ServiceDesk Simulator ticket queue" }
   ]
 },
+  {
+    category: "@it",
+    badge: "LMS Admin & Technical Docs",
+    title: "Technical documentation ",
+    description: "Configured LearnWorlds platform, produced user support documentation, and recorded feature guides.",
+    longDescription: "Managed backend configuration for the LearnWorlds LMS platform. Authored end-user technical support documentation and produced video walkthrough guides to streamline user onboarding, platform troubleshooting, and operational workflows.",
+    tags: ["LearnWorlds", "Technical Writing", "LMS Admin", "Video Documentation", "User Support"],
+    href: "https://drive.google.com/file/d/1xPnt8pT1w4SjICeG2SbaqCdWsoGw0bGW/view",
+    media: [
+      { type: "image", src: "/assets/technical-documentation.png", alt: "Technical Support Documentation" }
+    ]
+  },
+
+
 ];
