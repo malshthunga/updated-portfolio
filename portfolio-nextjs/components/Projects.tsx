@@ -381,7 +381,14 @@ function ProjectModal({ project, onClose }: { project: Project | null; onClose: 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState<Category>("@analytics");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
+  useEffect(() => {
+      function handleFilterEvent(e: Event) {
+        const category = (e as CustomEvent<Category>).detail;
+        setActiveCategory(category);
+      }
+      window.addEventListener("filterProjects", handleFilterEvent as EventListener);
+      return () => window.removeEventListener("filterProjects", handleFilterEvent as EventListener);
+    }, []);
   const analyticsCount = projects.filter((p) => p.category === "@analytics").length;
   const softwareCount = projects.filter((p) => p.category === "@software").length;
   const itCount = projects.filter((p) => p.category === "@it").length;

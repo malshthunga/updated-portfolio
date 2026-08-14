@@ -240,7 +240,7 @@ export const projects: Project[] = [
   tags: ["Service Desk", "Ticketing", "Troubleshooting", "Customer Support"],
   href: "#",
   media: [
-    { type: "image", src: "/assets/servicedesk-simulator.jpeg", alt: "ServiceDesk Simulator ticket queue" }
+    { type: "image", src: "/assets/servicedesk-simulator.jpg", alt: "ServiceDesk Simulator ticket queue" }
   ]
 },
 ];
